@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Utilizando Json</title>
+
+</head>
+<body>
+<div id="usuarios">
+</div>
+<script>
+    let divUsuarios =
+    document.querySelector("#usuarios")
+    fetch("dados.json").then((response) => {
+        response.json().then((dados) => {
+            dados.usuarios.map((usuario) => {
+                divUsuarios.innerHTML += `<li>
+                    ${usuario.nome} - ${usuario.idade} anos</li>`
+            })
+        }) 
+    } )
+       
+</script>
+
+
+
+
+
+
+
+
+
